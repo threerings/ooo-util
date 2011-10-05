@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 import com.samskivert.text.MessageUtil;
 import com.samskivert.util.StringUtil;
 
-import static com.threerings.Log.log;
+import static com.threerings.util.Log.log;
 
 /**
  * A message bundle provides an easy mechanism by which to obtain translated message strings from
@@ -240,7 +240,8 @@ public class MessageBundle
         }
 
         if (reportMissing) {
-            log.warning("Missing translation message", "bundle", _path, "key", key, new Exception());
+            log.warning("Missing translation message",
+                        "bundle", _path, "key", key, new Exception());
         }
 
         return null;

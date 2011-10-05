@@ -13,7 +13,7 @@ import com.google.common.collect.Maps;
 
 import com.samskivert.util.Tuple;
 
-import static com.threerings.Log.log;
+import static com.threerings.servlet.util.Log.log;
 
 public class FlashVarBuilder
 {

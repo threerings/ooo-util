@@ -14,7 +14,7 @@ import com.google.common.collect.Maps;
 
 import com.samskivert.util.StringUtil;
 
-import static com.threerings.Log.log;
+import static com.threerings.util.Log.log;
 
 /**
  * The message manager provides a thin wrapper around Java's built-in localization support,

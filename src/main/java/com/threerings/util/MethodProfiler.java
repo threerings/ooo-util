@@ -14,7 +14,7 @@ import com.google.common.collect.Maps;
 
 import com.samskivert.util.StringUtil;
 
-import static com.threerings.Log.log;
+import static com.threerings.util.Log.log;
 
 /**
  * Records the times that it takes to call methods. Allows one simultaneous method call per thread

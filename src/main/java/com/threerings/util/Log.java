@@ -3,12 +3,12 @@
 // Copyright (C) 2011 Three Rings Design, Inc., All Rights Reserved
 // http://github.com/threerings/ooo-util/blob/master/LICENSE
 
-package com.threerings;
+package com.threerings.util;
 
 import com.samskivert.util.Logger;
 
 /**
- * Contains a reference to the log object used by this library.
+ * Contains a reference to the log object used by this package.
  */
 public class Log
 {
