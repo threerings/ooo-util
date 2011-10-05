@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<project name="ooo-user" default="compile" basedir=".">
+  <property name="src.dir" location="src/main/java"/>
+  <property name="deploy.dir" location="target"/>
+  <property name="classes.dir" location="${deploy.dir}/classes"/>
+  <property name="jar.file" location="${deploy.dir}/${ant.project.name}.jar"/>
+
+  <!-- bring in our standard build support -->
+  <property name="ooo-build.vers" value="2.7"/>
+  <ant antfile="etc/bootstrap.xml"/>
+  <import file="${user.home}/.m2/ooo-build/${ooo-build.vers}/ooo-build.xml"/>
+
+  <target name="prepare" depends="-init-ooo">
+    <mkdir dir="${classes.dir}"/>
+    <mavendep pom="pom.xml"/>
+  </target>
+
+  <target name="clean" description="Cleans out compilation results.">
+    <delete dir="${deploy.dir}"/>
+  </target>
+
+  <target name="compile" depends="prepare" description="Builds the Java code.">
+    <ooojavac srcdir="${src.dir}" destdir="${classes.dir}" version="1.5"
+        classpathref="pom.xml.path"/>
+  </target>
+
+  <target name="package" depends="compile" description="Builds and jars the code.">
+    <jar destfile="${jar.file}" basedir="${classes.dir}"/>
+  </target>
+
+  <target name="maven-deploy" depends="package"
+      description="Deploys our build artifacts to a Maven repository.">
+    <mavendeploy file="${jar.file}" pom="pom.xml" srcdir="${src.dir}"/>
+  </target>
+</project>
