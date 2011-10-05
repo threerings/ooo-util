@@ -13,7 +13,35 @@
   <artifactId>ooo-util</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
+
   <name>ooo-util</name>
+  <description>A place for OOO utilities.</description>
+  <url>http://github.com/threerings/ooo-util</url>
+  <issueManagement>
+    <url>http://github.com/threerings/ooo-util/issues</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:git://github.com/threerings/ooo-util.git</connection>
+    <developerConnection>scm:git@github.com:threerings/ooo-util.git</developerConnection>
+    <url>http://github.com/threerings/ooo-util</url>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>The (New) BSD License</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>samskivert</id>
+      <name>Michael Bayne</name>
+      <email>mdb@samskivert.com</email>
+    </developer>
+  </developers>
 
   <dependencies>
     <dependency>
