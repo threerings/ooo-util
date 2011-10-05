@@ -15,7 +15,7 @@ Guava, and when either samskivert or Guava ships a versioned release, we'll
 ship a versioned release of ooo-util so that projects can bump to that release
 to obtain the latest transitive depends.
 
-We should stronly resist the addition of additional depends to this library,
+We should strongly resist the addition of additional depends to this library,
 unless they are indisputably useful to every single library and project in the
 whole wide world. Guava made that cut a long while back, and samskivert lingers
 with us like an embarrassing uncle, but I don't imagine another universally
