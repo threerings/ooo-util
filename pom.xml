@@ -22,8 +22,8 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git://github.com/threerings/ooo-util.git</connection>
-    <developerConnection>scm:git@github.com:threerings/ooo-util.git</developerConnection>
+    <connection>scm:git:git://github.com/threerings/ooo-util.git</connection>
+    <developerConnection>scm:git:git@github.com:threerings/ooo-util.git</developerConnection>
     <url>http://github.com/threerings/ooo-util</url>
   </scm>
 
