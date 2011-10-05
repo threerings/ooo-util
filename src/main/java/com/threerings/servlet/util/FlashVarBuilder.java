@@ -1,5 +1,7 @@
 //
-// $Id$
+// ooo-util - a place for OOO utilities
+// Copyright (C) 2011 Three Rings Design, Inc., All Rights Reserved
+// http://github.com/threerings/ooo-util/blob/master/LICENSE
 
 package com.threerings.servlet.util;
 
