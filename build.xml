@@ -6,7 +6,7 @@
   <property name="jar.file" location="${deploy.dir}/${ant.project.name}.jar"/>
 
   <!-- bring in our standard build support -->
-  <property name="ooo-build.vers" value="2.7"/>
+  <property name="ooo-build.vers" value="2.9"/>
   <ant antfile="etc/bootstrap.xml"/>
   <import file="${user.home}/.m2/ooo-build/${ooo-build.vers}/ooo-build.xml"/>
 
@@ -28,8 +28,21 @@
     <jar destfile="${jar.file}" basedir="${classes.dir}"/>
   </target>
 
-  <target name="maven-deploy" depends="package"
-      description="Deploys our build artifacts to a Maven repository.">
-    <mavendeploy file="${jar.file}" pom="pom.xml" srcdir="${src.dir}"/>
+  <target name="javadoc" depends="prepare" description="Builds the Java documentation">
+    <mkdir dir="${deploy.dir}/docs"/>
+    <javadoc sourcepath="${src.dir}" destdir="${deploy.dir}/docs"
+             additionalparam="-breakiterator" classpathref="pom.xml.path">
+      <link href="http://download.oracle.com/javase/6/docs/api/"/>
+      <link href="http://docs.guava-libraries.googlecode.com/git/javadoc/"/>
+      <link href="http://samskivert.github.com/samskivert/apidocs/"/>
+    </javadoc>
+  </target>
+
+  <target name="install" depends="package" description="Installs to local Maven repository.">
+    <maveninstall file="${jar.file}" pom="pom.xml"/>
+  </target>
+
+  <target name="deploy" depends="package,javadoc" description="Deploys to remote Maven repository.">
+    <mavendeploy file="${jar.file}" pom="pom.xml" srcdir="${src.dir}" docdir="${deploy.dir}/docs"/>
   </target>
 </project>
