@@ -7,9 +7,9 @@ package com.threerings.util;
 
 import java.util.Map;
 
-import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.Maps;
 
 import com.samskivert.util.StringUtil;
@@ -319,7 +319,7 @@ public class MethodProfiler
     };
 
     /** Stats by method name. */
-    protected final Cache<String, RunningStats> _profiles = CacheBuilder.newBuilder()
+    protected final LoadingCache<String, RunningStats> _profiles = CacheBuilder.newBuilder()
         .build(new CacheLoader<String, RunningStats>() {
             public RunningStats load (String key) {
                 return new RunningStats();
