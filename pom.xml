@@ -58,6 +58,12 @@
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>8.3-606.jdbc4</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
