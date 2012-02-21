@@ -186,7 +186,17 @@ public class MessageManager
      */
     protected void initBundle (MessageBundle bundle, String path, ResourceBundle rbundle)
     {
-        bundle.init(this, path, rbundle, _global);
+        MessageBundle parentBundle = null;
+        try {
+            parentBundle = getBundle(rbundle.getString("__parent"));
+            // Note: if getBundle() fails to find our parent it will log a warning and return null
+        } catch (MissingResourceException mre ) {
+            // no resource named __parent: it's ok.
+        }
+        if (parentBundle == null) {
+            parentBundle = _global;
+        }
+        bundle.init(this, path, rbundle, parentBundle);
     }
 
     /**
