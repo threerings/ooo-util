@@ -76,6 +76,17 @@ public class QueryBuilder
     }
 
     /**
+     * Adds all the parameters in <code>map</code> to the parameters being constructed.
+     */
+    public QueryBuilder addAll (Map<?, ?> map)
+    {
+        for (Map.Entry<?, ?> entry : map.entrySet()) {
+            add(String.valueOf(entry.getKey()), entry.getValue());
+        }
+        return this;
+    }
+
+    /**
      * Appends the query in this builder to the given StringBuilder with a question mark.
      */
     public String toUrl (StringBuilder base)
