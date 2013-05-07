@@ -108,6 +108,10 @@
         <artifactId>nexus-staging-maven-plugin</artifactId>
         <version>1.4.4</version>
         <extensions>true</extensions>
+        <configuration>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <serverId>sonatype-nexus-staging</serverId>
+        </configuration>
       </plugin>
     </plugins>
 
