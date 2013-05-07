@@ -45,12 +45,12 @@
     <dependency>
       <groupId>com.samskivert</groupId>
       <artifactId>samskivert</artifactId>
-      <version>1.7</version>
+      <version>1.7.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>13.0</version>
+      <version>14.0.1</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -103,7 +103,14 @@
           </links>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.4.4</version>
+        <extensions>true</extensions>
+      </plugin>
     </plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
