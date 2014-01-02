@@ -300,7 +300,16 @@ public class MessageBundle
             }
         }
 
-        return MessageFormat.format(MessageUtil.escape(msg), args);
+        try {
+            return MessageFormat.format(MessageUtil.escape(msg), args);
+
+        } catch (IllegalArgumentException iae) {
+            // The pattern is invalid or the arguments don't match up. Don't 'throw' because of
+            // a translation error, we need to do our best for the user. But log it well.
+            log.warning("Translation error: '" + iae.getMessage() + "'",
+                "bundle", _path, "key", key, "msg", msg, "args", args, iae);
+            return msg + StringUtil.toString(args);
+        }
     }
 
     /**
