@@ -10,10 +10,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.google.common.base.Functions;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
 import com.samskivert.util.StringUtil;
