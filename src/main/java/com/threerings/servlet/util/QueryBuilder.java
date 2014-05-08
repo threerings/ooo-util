@@ -10,8 +10,10 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.google.common.base.Functions;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
 import com.samskivert.util.StringUtil;
@@ -19,6 +21,14 @@ import com.samskivert.util.Tuple;
 
 public class QueryBuilder
 {
+    /**
+     * Build a query directly from the specified map.
+     */
+    public static String build (Map<?, ?> values)
+    {
+        return encode(new StringBuilder(), values.entrySet());
+    }
+
     /**
      * Retrieve the only value for the given key, or null if it's not defined. If the key has more
      * than one value defined, an IllegalArgumentException will be thrown.
@@ -110,13 +120,13 @@ public class QueryBuilder
         return encode(new StringBuilder(), _params.entries());
     }
 
-    protected static String encode (StringBuilder out, Iterable<Map.Entry<String, String>> entries)
+    protected static String encode (StringBuilder out, Iterable<? extends Map.Entry<?, ?>> entries)
     {
         boolean appended = false;
-        for (Map.Entry<String, String> entry : entries) {
-            out.append(StringUtil.encode(entry.getKey())).
+        for (Map.Entry<?, ?> entry : entries) {
+            out.append(StringUtil.encode(String.valueOf(entry.getKey()))).
                 append('=').
-                append(StringUtil.encode(entry.getValue())).
+                append(StringUtil.encode(String.valueOf(entry.getValue()))).
                 append('&');
             appended = true;
         }
