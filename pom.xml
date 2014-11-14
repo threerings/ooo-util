@@ -19,12 +19,6 @@
     <url>http://github.com/threerings/ooo-util/issues</url>
   </issueManagement>
 
-  <scm>
-    <connection>scm:git:git://github.com/threerings/ooo-util.git</connection>
-    <developerConnection>scm:git:git@github.com:threerings/ooo-util.git</developerConnection>
-    <url>http://github.com/threerings/ooo-util</url>
-  </scm>
-
   <licenses>
     <license>
       <name>The (New) BSD License</name>
@@ -40,6 +34,12 @@
       <email>mdb@samskivert.com</email>
     </developer>
   </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/threerings/ooo-util.git</connection>
+    <developerConnection>scm:git:git@github.com:threerings/ooo-util.git</developerConnection>
+    <url>http://github.com/threerings/ooo-util</url>
+  </scm>
 
   <dependencies>
     <dependency>
