@@ -8,7 +8,7 @@ package com.threerings.servlet.util;
 import com.samskivert.util.LogBuilder;
 
 /**
- * Indicates that a converter couldn't handle a parameter value in {@Parameters}.
+ * Indicates that a converter couldn't handle a parameter value in {@link Parameters}.
  */
 public class ConversionFailedException extends RuntimeException
 {
