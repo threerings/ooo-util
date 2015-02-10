@@ -12,8 +12,8 @@ import javax.sql.DataSource;
 
 import org.postgresql.jdbc2.optional.PoolingDataSource;
 
-import com.samskivert.jdbc.ConnectionProvider;
-import com.samskivert.jdbc.DataSourceConnectionProvider;
+import com.samskivert.depot.ConnectionProvider;
+import com.samskivert.depot.DataSourceConnectionProvider;
 import com.samskivert.util.Config;
 import com.samskivert.util.MissingPropertyException;
 
