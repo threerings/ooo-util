@@ -48,11 +48,6 @@
       <version>1.9</version>
     </dependency>
     <dependency>
-      <groupId>com.samskivert</groupId>
-      <artifactId>depot</artifactId>
-      <version>1.7</version>
-    </dependency>
-    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>18.0</version>
@@ -61,12 +56,6 @@
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>8.3-606.jdbc4</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
