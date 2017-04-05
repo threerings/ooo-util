@@ -199,8 +199,16 @@ public class MessageBundle
     /**
      * Returns true if we have a translation mapping for the supplied key, false if not.
      */
-    public boolean exists (String key)
+    public boolean exists (String compoundKey)
     {
+        // if this is a qualified key, we need to pass the buck to the appropriate message bundle.
+        if (compoundKey.startsWith(MessageUtil.QUAL_PREFIX)) {
+            MessageBundle qbundle = _msgmgr.getBundle(getBundle(compoundKey));
+            return qbundle.exists(getUnqualifiedKey(compoundKey));
+        }
+
+        int tidx = compoundKey.indexOf('|');
+        String key = (tidx == -1) ? compoundKey : compoundKey.substring(0, tidx);
         return getResourceString(key, false) != null;
     }
 
