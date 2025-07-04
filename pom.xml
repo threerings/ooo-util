@@ -5,7 +5,7 @@
   <groupId>com.threerings</groupId>
   <artifactId>ooo-util</artifactId>
   <packaging>jar</packaging>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 
   <name>ooo-util</name>
   <description>A place for OOO utilities.</description>
@@ -34,6 +34,7 @@
     <connection>scm:git:git://github.com/threerings/ooo-util.git</connection>
     <developerConnection>scm:git:git@github.com:threerings/ooo-util.git</developerConnection>
     <url>http://github.com/threerings/ooo-util</url>
+    <tag>ooo-util-1.5</tag>
   </scm>
 
   <dependencies>
