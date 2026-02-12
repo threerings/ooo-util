@@ -8,7 +8,7 @@ package com.threerings.servlet.util;
 import java.util.Collection;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Iterables;

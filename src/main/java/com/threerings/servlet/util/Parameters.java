@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import javax.servlet.ServletRequest;
+import jakarta.servlet.ServletRequest;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
